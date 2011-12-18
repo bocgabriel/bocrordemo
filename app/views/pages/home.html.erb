@@ -1,0 +1,35 @@
+<% if signed_in? %>
+
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="micropost">What's up?</h1>
+        <%= render 'shared/micropost_form' %>
+        <%= render 'shared/feed' %>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+        <%= render 'shared/stats' %>
+      </td>
+    </tr>
+  </table>
+
+<% else %>
+
+<h1><a href="">Band of Coders</a> Ruby on Rails Application Demo</h1>
+<p>
+  This is a Ruby on Rails demo application by Band of Coders.
+</p>
+<p>
+  <ul>
+    <li>Ruby 1.9.3p0</li>
+    <li>Rails 3.0.11 MVC Framework</li>
+    <li>RSpec 2.7.1 Testing framework (Unit/Behavioral)</li>
+    <li>ERB for page rendering</p>
+  </ul>
+</p>
+<p>To start using the application you can go to the <%= link_to "Sign up page", signup_path%> to create a user for you.</p>
+
+<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+
+<% end %>
